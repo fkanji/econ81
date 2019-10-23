@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Documentation</title>
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+
+	<div class="nav">
+      <ul>
+        <li class="home"><a href="index.html">Home</a></li>
+        <li class="LP"><a href="lin_prog.html">Linear Programming</a></li>
+        <li class="LPeg"><a href="lin_prog_eg.html">LP Example</a></li>
+        <li class="CR"><a href="cramer_rule.html">Cramer's Rule</a></li>
+        <li class="DN"><a class="active" href="documentation.html">Documentation</a></li>
+        
+      </ul>
+    </div>
+</head>
+<body>
+
+<div align=center>
+	<div id="wrapper" style="width:60%;" align=center>
+		<br>
+		<h1>Documentation</h1>
+		<hr>
+		<br>
+		<br>
+		<h2>Credits</h2>
+		<hr>
+		<br>
+		<p style="text-align:left">
+			The tools on this website use the following Javascript Libraries:
+			<ul style="text-align:left">
+			<li> <a href="numericjs.com"> Numeric.js </a></li>
+			<li> <a href="mathjs.org"> Math.js </a></li>
+			<li> <a href="https://www.desmos.com"> Desmos Calculator </a></li>
+			</ul>
+		</p>
+		<br>
+		Furthemore, I would like to thank Professor Christopher M. Snyder for his guidance through Economics 81 and this project.
+		<br>
+		<br>
+		<h2>Linear Programming Instructions</h2>
+		<hr>
+		<br>
+		<br>
+		<p style="text-align:left">
+			You start by selecting the number of variables. Next you select the number of constraints. If the "Include Non-Negativity Constraints" is checked, the program will automatically assume that the variables have to be non-negative. Based on the number of variables and constraints selected, the appropriate utility condition and constraints will pop up for you to fill. Input the coefficients in the equation and click submit to get the results. In the special case where you have just 2 variables, you will also get a graph of the constraints and the utility equation.
+			<br>
+			<br>
+			<h3 style="text-align:left"><u>Known Issues</u></h3>
+			<br>
+		</p>
+		<p style="text-align:left">
+			One possible issue is when the constraints allow an unbounded solution. In that case, the program will either output text saying that the solution is unbounded, or give solutions that it finds on the last possible iteration of the numerical methods used to solve the problem.
+			<br>
+			<br>
+			Another issue is the special case where a constraint of the form 0x<sub>1</sub> + 0x<sub>2</sub> &#8804; 0 is inputted. In that case, the program outputs some arbitrary solutions.
+			<br>
+			<br>
+			Finally some cases (including some rather trivial cases), are not solved efficiently by the program, causing the program to exceed maximum allowable iterations without finding a solution. In such a case the program outputs text explaining that.
+			<br>
+			<br>
+		</p>
+		<h2>Cramer's Rule Instructions</h2>
+		<hr>
+		<br>
+		<br>
+		<p style="text-align:left">
+			You start with determining the dimension of your main matrix (which is the same as the number of variables you want to simultaneously solve for). You are then presented with a matrix of appropriate dimensions where you can input your coefficients. You can reset the matrix or fill the empty cells with zeroes using the appropriate buttons. Finally, clicking Solve will give you a step-by-step solution to that problem.
+			<br>
+			<br>
+			<h3 style="text-align:left"><u>Known Issues</u></h3>
+			<br>
+		</p>
+		<p style="text-align:left">
+			One possible issue is when the system of equations has no solutions or infinitely many solutions. Unfortunately, Cramer's rule cannot solve such a system. If that is the case, then the determinant of the main matrix will be 0. In that case, the program will output text stating that.
+		</p>
+		<br>
+		<br>
+		<div id="footer">
+		<hr>
+		<br>
+		Made by Faizan N. Kanji '15 in Spring 2015 as the final project for Professor Christopher M. Snyder's Economics 81 - Advanced Microeconomics class at Dartmouth College.
+		</div>
+	</div>
+</div>
+</body>
+
+</html>

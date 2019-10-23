@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Linear Programming Example</title>
+	<link rel="stylesheet" type="text/css" href="style/style.css" />
+	<style type="text/css">
+	.tg  {border-collapse:collapse;border-spacing:0;}
+	.tg td{padding:8px 15px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+	.tg th{font-weight:normal;padding:8px 15px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="js/numeric-1.2.6.js"></script>
+	<script src="js/math.min.js" type="text/javascript"></script>
+	<script src="https://www.desmos.com/api/v0.4/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+	<script src="js/lin_prog_eg.js"></script>
+
+
+	 <div class="nav">
+      <ul>
+        <li class="home"><a href="index.html">Home</a></li>
+        <li class="LP"><a href="lin_prog.html">Linear Programming</a></li>
+        <li class="LPeg"><a class="active" href="lin_prog_eg.html">LP Example</a></li>
+        <li class="CR"><a href="cramer_rule.html">Cramer's Rule</a></li>
+        <li class="DN"><a href="documentation.html">Documentation</a></li>
+        
+      </ul>
+    </div>
+</head>
+<body>
+<div align=center>
+<div id="wrapper" align=center style="width:60%;">
+<br>
+<h1>Linear Programming Example</h1>
+<br><br>
+
+<div id="Content">
+<p style="text-align:left">In this section, we will an interactive example of solving a problem using Linear Programming. The following problem is taken from Hoy, Michael <i>et al.</i> (2011) Mathematics for Economists.
+
+<br><br>
+A central planner wants to allocate three resources to the production of two goods. The production technology is linear, and the following table gives the amount of each input required to produce one unit of the given output:<br><br>
+<table class="tg" style="text-align:center">
+  <tr>
+    <td class="tg-031e" colspan="2" rowspan="2"></td>
+    <td class="tg-031e" colspan="2">Output</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">x<sub>1</sub></td>
+    <td class="tg-031e">x<sub>2</sub></td>
+  </tr>
+  <tr>
+    <td class="tg-031e"></td>
+    <td class="tg-031e">L</td>
+    <td class="tg-031e">2</td>
+    <td class="tg-031e">3</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">Input</td>
+    <td class="tg-031e">K</td>
+    <td class="tg-031e">2.5</td>
+    <td class="tg-031e">2</td>
+  </tr>
+  <tr>
+    <td class="tg-031e"></td>
+    <td class="tg-031e">R</td>
+    <td class="tg-031e">3</td>
+    <td class="tg-031e">0.5</td>
+  </tr>
+</table>
+<br><br>
+</p>
+<p style="text-align:left;">
+The planner wants to maximize the value of output at world prices, which are $10 for x<sub>1</sub> and $8 for x<sub>2</sub>. The resource availabilities are:
+</p>
+<br><br>
+
+<p> L<sup>0</sup> = 100.&nbsp;&nbsp;&nbsp; K<sup>0</sup> = 100.&nbsp;&nbsp;&nbsp; R<sup>0</sup> = 90.
+</p>
+<p style="text-align:left;">
+Find the optimal resource allocation.
+</p>
+<br>
+<p align="right">
+	<input type="button" class="modern" id="next1" value="Next">
+</p>
+<hr><br>
+</div>
+<div id="step1" style="display:none; text-align:left">
+We can formulate this problem as a constrained optimization problem as follows:
+<br><br>
+First note that the planner wants to maximize the value of output. Therefore, the planner wants to solve the following problem:
+<br><br>
+<p style="text-align:center; font-size:18px">
+Max<sub>x<sub>1</sub>, x<sub>2</sub></sub> { 10x<sub>1</sub> + 8x<sub>2</sub> }
+</p>
+<br>
+We need to solve the problem given certain constraints. First, we will assume that the company can only make positive output, giving us non-negativity constraints for our x<sub>1</sub> and x<sub>2</sub>. Furthermore, expressing the inputs in terms of the outputs, we also have the following constraints:
+<br><br>
+<p style="text-align:center; font-size:18px">
+L = 2x<sub>1</sub> + 3x<sub>2</sub> &#8804 100
+</p>
+<p style="text-align:center; font-size:18px">
+K = 2.5x<sub>1</sub> + 2x<sub>2</sub> &#8804 100
+</p>
+<p style="text-align:center; font-size:18px">
+R = 3x<sub>1</sub> + 0.5x<sub>2</sub> &#8804 90
+</p>
+<br>
+<br>
+One possible way to solve this problem is using Kuhn Tucker conditions and going through the numerous cases that the answer to this problem will require us to. However, an easier way is to use Linear Programming methods.
+
+<br>
+<p align="right">
+	<input type="button" class="modern" id="next2" value="Next">
+</p>
+<br><hr><br>
+</div>
+
+<div id="step2" style="display:none; text-align:left">
+To solve this problem using Linear Programming methods, we need start by graphing all our constraints. The graph below, graphs each of our constraints and shows the feasible region where our solution can be as the unshaded white part.
+<br><br>
+<div id="calculator" style="width: 100%; height: 550px;"></div>
+<br><br>
+It might look like the three constraints are intersecting at one point however if you <a href="javascript:zoom()"><u>zoom</u></a> into the graph you'll see that this is not the case.
+
+<br><br>
+Next we will add the utility line given by 10x<sub>1</sub> + 8x<sub>2</sub>. We want to know at what values of x<sub>1</sub> and x<sub>2</sub>, is this expression the highest while still in the feasible area. Click <a href="javascript:addline()"><u>here</u></a> to add the initial line given by 10x<sub>1</sub> + 8x<sub>2</sub> = 0.
+<br><br>
+<div id="slider_text" style="display:none">
+You can now use the slider below move the line around while maintaining the same utility expression. Move the slider to see how much you can increase utility while still keeping at least some part of the line within the feasible region. When you are done trying different solutions, click the See Solutions button to see the solution to the problem.
+<br>
+<div id="slid"></div>
+<div id="chosen"></div>
+<input type="button" class="modern" id="solns" value="See Solutions"> 
+</div>
+<br><br>
+<div id="solution" style="display:none">
+	You might have noticed from playing with the slider that the maximum value of utility you can achieve while staying in the feasible region is 395. This value is achieved at the intersection of the two constraints given by:
+	<br><br>
+	<p style="text-align:center; font-size:18px">
+	L = 2x<sub>1</sub> + 3x<sub>2</sub> &#8804 100
+	</p>
+	<p style="text-align:center; font-size:18px">
+	R = 3x<sub>1</sub> + 0.5x<sub>2</sub> &#8804 90
+	</p>
+	<br><br>
+	We can get the corresponding x<sub>1</sub> and x<sub>2</sub> values by solving the L and R equations simultaneously. This gives us the following set of solutions:
+	<br><br>
+	<p style="text-align:center; font-size:18px">
+	x<sub>1</sub> = 27.5
+	</p>
+	<p style="text-align:center; font-size:18px">
+	x<sub>2</sub> = 15
+	</p>
+	<br><br>
+	As seen from the graph, at these values of x<sub>1</sub> and x<sub>2</sub>, we get the maximum utility in the feasible region. This is an example of how we can solve a Linear optimization problem.
+</div>
+<br><hr><br>
+</div>
+<div id="footer">
+Made by Faizan N. Kanji '15 in Spring 2015 as the final project for Professor Christopher M. Snyder's Economics 81 - Advanced Microeconomics class at Dartmouth College.
+</div>
+<br><br>
+</div>
+</div>
+</body>
+
+</html>

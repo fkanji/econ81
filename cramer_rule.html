@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cramer's Rule</title>
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="js/numeric-1.2.6.js"></script>
+	<script src="js/math.min.js" type="text/javascript"></script>
+	<script src="https://www.desmos.com/api/v0.4/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+	<script src="js/cramer.js"></script>
+
+	<div class="nav">
+      <ul>
+        <li class="home"><a href="index.html">Home</a></li>
+        <li class="LP"><a href="lin_prog.html">Linear Programming</a></li>
+        <li class="LPeg"><a href="lin_prog_eg.html">LP Example</a></li>
+        <li class="CR"><a class="active" href="cramer_rule.html">Cramer's Rule</a></li>
+        <li class="DN"><a href="documentation.html">Documentation</a></li>
+        
+      </ul>
+    </div>
+</head>
+<body>
+<div align=center>
+	<div id="wrapper" style="width:60%;" align=center>
+		<br>
+		<h1>Cramer's Rule</h1>
+		<div id="Content">
+			Matrix dimension (number of variables):
+			<select id="dimensions"></select>
+			<input type="button" class="modern" id="setmatrix" value="Next">
+			<br><br>
+		</div>
+		<div id="matrix_div" style="display:none" align=center>
+			<div id="matrix">
+			</div>
+			<br>
+			<input type="button" class="modern" id="reset" value="Reset">
+			<input type="button" class="modern" id="zeroes" value="Fill empty cells with zeroes">
+			<br>
+			<input type="button" class="modern" id="solve" value="Solve">
+		</div>
+		<br><hr><br>
+		<div id="solutions">
+		</div>
+		<div id="result_div">
+		</div>
+		<div id="footer">
+		Made by Faizan N. Kanji '15 in Spring 2015 as the final project for Professor Christopher M. Snyder's Economics 81 - Advanced Microeconomics class at Dartmouth College.
+		</div>
+	</div>
+</div>
+</body>
+
+</html>
